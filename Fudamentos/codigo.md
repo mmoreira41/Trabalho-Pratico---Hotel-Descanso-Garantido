@@ -209,4 +209,108 @@ void baixarEstadia(Estadia *estadias, int *numEstadias, Quarto *quartos, int num
             // Remover a estadia do array
             for (int k = i; k < *numEstadias - 1; k++) {
                 estadias[k] = estadias[k + 1];
-           
+                           estadias[k] = estadias[k + 1];
+            }
+            (*numEstadias)--;
+            return;
+        }
+    }
+    printf("Estadia nao encontrada.\n");
+}
+
+void pesquisarCliente(Cliente *clientes, int numClientes) {
+    int codigo;
+    printf("Digite o codigo do cliente: ");
+    scanf("%d", &codigo);
+
+    for (int i = 0; i < numClientes; i++) {
+        if (clientes[i].codigo == codigo) {
+            printf("Codigo: %d\nNome: %s\nEndereco: %s\nTelefone: %s\n", clientes[i].codigo, clientes[i].nome, clientes[i].endereco, clientes[i].telefone);
+            return;
+        }
+    }
+    printf("Cliente nao encontrado.\n");
+}
+
+void pesquisarFuncionario(Funcionario *funcionarios, int numFuncionarios) {
+    int codigo;
+    printf("Digite o codigo do funcionario: ");
+    scanf("%d", &codigo);
+
+    for (int i = 0; i < numFuncionarios; i++) {
+        if (funcionarios[i].codigo == codigo) {
+            printf("Codigo: %d\nNome: %s\nTelefone: %s\nCargo: %s\nSalario: %.2f\n", funcionarios[i].codigo, funcionarios[i].nome, funcionarios[i].telefone, funcionarios[i].cargo, funcionarios[i].salario);
+            return;
+        }
+    }
+    printf("Funcionario nao encontrado.\n");
+}
+
+void mostrarEstadiasCliente(Estadia *estadias, int numEstadias, int codigoCliente) {
+    int encontrou = 0;
+    for (int i = 0; i < numEstadias; i++) {
+        if (estadias[i].codigoCliente == codigoCliente) {
+            printf("Codigo Estadia: %d\nData Entrada: %s\nData Saida: %s\nQuantidade Diarias: %d\nNumero Quarto: %d\n", estadias[i].codigoEstadia, estadias[i].dataEntrada, estadias[i].dataSaida, estadias[i].quantidadeDiarias, estadias[i].numeroQuarto);
+            encontrou = 1;
+        }
+    }
+    if (!encontrou) {
+        printf("Nenhuma estadia encontrada para o cliente com codigo %d.\n", codigoCliente);
+    }
+}
+
+int main() {
+    Cliente clientes[100];
+    Funcionario funcionarios[100];
+    Estadia estadias[100];
+    Quarto quartos[100] = {
+        {101, 2, 150.0, "desocupado"},
+        {102, 2, 150.0, "desocupado"},
+        {103, 4, 200.0, "desocupado"},
+        {104, 1, 100.0, "desocupado"},
+    };
+
+    int numClientes = 0, numFuncionarios = 0, numEstadias = 0, numQuartos = 4;
+    int opcao;
+
+    do {
+        printf("1. Cadastrar Cliente\n2. Cadastrar Funcionario\n3. Cadastrar Estadia\n4. Baixar Estadia\n5. Pesquisar Cliente\n6. Pesquisar Funcionario\n7. Mostrar Estadias de um Cliente\n8. Sair\n");
+        printf("Digite a opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                cadastrarCliente(clientes, &numClientes);
+                break;
+            case 2:
+                cadastrarFuncionario(funcionarios, &numFuncionarios);
+                break;
+            case 3:
+                cadastrarEstadia(estadias, &numEstadias, clientes, numClientes, quartos, numQuartos);
+                break;
+            case 4:
+                baixarEstadia(estadias, &numEstadias, quartos, numQuartos);
+                break;
+            case 5:
+                pesquisarCliente(clientes, numClientes);
+                break;
+            case 6:
+                pesquisarFuncionario(funcionarios, numFuncionarios);
+                break;
+            case 7:
+                printf("Digite o codigo do cliente: ");
+                int codigoCliente;
+                scanf("%d", &codigoCliente);
+                mostrarEstadiasCliente(estadias, numEstadias, codigoCliente);
+                break;
+            case 8:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+        }
+    } while (opcao != 8);
+
+    return 0;
+}
+
