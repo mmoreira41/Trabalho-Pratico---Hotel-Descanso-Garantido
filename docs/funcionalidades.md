@@ -30,3 +30,27 @@ cadastrarCliente(clientes, &numClientes);
 Funcionario funcionarios[100];
 int numFuncionarios = 0;
 cadastrarFuncionario(funcionarios, &numFuncionarios);
+````
+## 3. Cadastrar Estadia
+**Descrição:** Permite cadastrar novas estadias no sistema.
+
+**Função:** `void cadastrarEstadia(Estadia *estadias, int *numEstadias, Cliente *clientes, int numClientes, Quarto *quartos, int numQuartos)`
+
+**Parâmetros:**
+- `Estadia *estadias`: Array de estadias.
+- `int *numEstadias`: Ponteiro para o número de estadias cadastradas.
+- `Cliente *clientes`: Array de clientes cadastrados.
+- `int numClientes`: Número de clientes cadastrados.
+- `Quarto *quartos`: Array de quartos disponíveis.
+- `int numQuartos`: Número de quartos cadastrados.
+
+**Exemplo de Uso:**
+```c
+Estadia estadias[100];
+int numEstadias = 0;
+Cliente clientes[100];
+int numClientes = 5;
+Quarto quartos[100] = { {101, 2, 150.0, "desocupado"}, {102, 2, 150.0, "desocupado"} };
+int numQuartos = 2;
+
+cadastrarEstadia(estadias, &numEstadias, clientes, numClientes, quartos, numQuartos);
