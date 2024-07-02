@@ -14,6 +14,7 @@
 Cliente clientes[100];
 int numClientes = 0;
 cadastrarCliente(clientes, &numClientes);
+```
 
 ## 2. Cadastrar Funcionário
 **Descrição:** Permite cadastrar novos funcionários no sistema.
