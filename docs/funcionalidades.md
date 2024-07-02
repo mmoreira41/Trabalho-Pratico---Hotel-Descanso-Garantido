@@ -90,4 +90,20 @@ Cliente clientes[100];
 int numClientes = 5;
 
 pesquisarCliente(clientes, numClientes);
+````
+## 6. Pesquisar Funcionário
+**Descrição:** Permite buscar e exibir informações de um funcionário pelo código.
 
+**Função:** `void pesquisarFuncionario(Funcionario *funcionarios, int numFuncionarios)`
+
+**Parâmetros:**
+- `Funcionario *funcionarios`: Array de funcionários cadastrados.
+- `int numFuncionarios`: Número de funcionários cadastrados.
+
+**Exemplo de Uso:**
+```c
+Funcionario funcionarios[100];
+int numFuncionarios = 5;
+
+pesquisarFuncionario(funcionarios, numFuncionarios);
+````
