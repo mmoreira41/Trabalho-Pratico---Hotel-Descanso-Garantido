@@ -75,3 +75,19 @@ int numQuartos = 2;
 
 baixarEstadia(estadias, &numEstadias, quartos, numQuartos);
 ````
+## 5. Pesquisar Cliente
+**Descrição:** Permite buscar e exibir informações de um cliente pelo código.
+
+**Função:** `void pesquisarCliente(Cliente *clientes, int numClientes)`
+
+**Parâmetros:**
+- `Cliente *clientes`: Array de clientes cadastrados.
+- `int numClientes`: Número de clientes cadastrados.
+
+**Exemplo de Uso:**
+```c
+Cliente clientes[100];
+int numClientes = 5;
+
+pesquisarCliente(clientes, numClientes);
+
