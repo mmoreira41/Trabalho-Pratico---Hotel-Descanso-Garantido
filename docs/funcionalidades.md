@@ -107,3 +107,20 @@ int numFuncionarios = 5;
 
 pesquisarFuncionario(funcionarios, numFuncionarios);
 ````
+## 7. Mostrar Estadias de um Cliente
+**Descrição:** Permite listar todas as estadias de um cliente pelo código do cliente.
+
+**Função:** `void mostrarEstadiasCliente(Estadia *estadias, int numEstadias, int codigoCliente)`
+
+**Parâmetros:**
+- `Estadia *estadias`: Array de estadias cadastradas.
+- `int numEstadias`: Número de estadias cadastradas.
+- `int codigoCliente`: Código do cliente.
+
+**Exemplo de Uso:**
+```c
+Estadia estadias[100];
+int numEstadias = 5;
+int codigoCliente = 1;
+
+mostrarEstadiasCliente(estadias, numEstadias, codigoCliente);
