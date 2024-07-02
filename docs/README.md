@@ -1,22 +1,30 @@
-
 # Documentação do Sistema de Gerenciamento de Hotel
 
 ## Descrição
 Este sistema foi desenvolvido para gerenciar clientes, funcionários, estadias e quartos do Hotel Descanso Garantido. Ele permite cadastrar clientes e funcionários, registrar estadias, baixar estadias e consultar informações cadastradas.
 
-## Funcionalidades
+## Índice
+- [Funcionalidades](functionalities.md)
+- [Plano de Testes](casos_de_testes.md)
 
-### 1. Cadastrar Cliente
-**Descrição:** Permite cadastrar novos clientes no sistema.
+## Funcionalidades Principais
+O sistema permite realizar as seguintes operações:
+- **Cadastro de Clientes**: Registra informações dos clientes.
+- **Cadastro de Funcionários**: Registra informações dos funcionários.
+- **Cadastro de Estadias**: Registra estadias dos clientes, assegurando que os quartos estejam disponíveis.
+- **Baixa de Estadias**: Finaliza estadias, calcula o valor total a ser pago e libera o quarto.
+- **Pesquisa de Clientes e Funcionários**: Permite buscar e exibir informações de clientes e funcionários.
+- **Listagem de Estadias por Cliente**: Mostra todas as estadias de um cliente específico.
 
-**Função:** `void cadastrarCliente(Cliente *clientes, int *numClientes)`
+## Estrutura do Projeto
+O projeto está organizado da seguinte forma:
 
-**Parâmetros:**
-- `Cliente *clientes`: Array de clientes.
-- `int *numClientes`: Ponteiro para o número de clientes cadastrados.
-
-**Exemplo de Uso:**
-```c
-Cliente clientes[100];
-int numClientes = 0;
-cadastrarCliente(clientes, &numClientes);
+```plaintext
+hotel_management/
+├── codigo/
+│   └── main.c
+├── docs/
+│   ├── README.md
+│   ├── functionalities.md
+│   └── casos_de_testes.md
+└── README.md
