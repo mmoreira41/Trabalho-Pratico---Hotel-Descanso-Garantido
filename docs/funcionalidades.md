@@ -54,3 +54,24 @@ Quarto quartos[100] = { {101, 2, 150.0, "desocupado"}, {102, 2, 150.0, "desocupa
 int numQuartos = 2;
 
 cadastrarEstadia(estadias, &numEstadias, clientes, numClientes, quartos, numQuartos);
+````
+## 4. Baixar Estadia
+**Descrição:** Permite finalizar uma estadia, calcular o valor total e liberar o quarto.
+
+**Função:** `void baixarEstadia(Estadia *estadias, int *numEstadias, Quarto *quartos, int numQuartos)`
+
+**Parâmetros:**
+- `Estadia *estadias`: Array de estadias.
+- `int *numEstadias`: Ponteiro para o número de estadias cadastradas.
+- `Quarto *quartos`: Array de quartos disponíveis.
+- `int numQuartos`: Número de quartos cadastrados.
+
+**Exemplo de Uso:**
+```c
+Estadia estadias[100];
+int numEstadias = 5;
+Quarto quartos[100] = { {101, 2, 150.0, "ocupado"}, {102, 2, 150.0, "ocupado"} };
+int numQuartos = 2;
+
+baixarEstadia(estadias, &numEstadias, quartos, numQuartos);
+````
