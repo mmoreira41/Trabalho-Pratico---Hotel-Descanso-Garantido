@@ -15,3 +15,17 @@ Cliente clientes[100];
 int numClientes = 0;
 cadastrarCliente(clientes, &numClientes);
 
+## 2. Cadastrar Funcionário
+**Descrição:** Permite cadastrar novos funcionários no sistema.
+
+**Função:** `void cadastrarFuncionario(Funcionario *funcionarios, int *numFuncionarios)`
+
+**Parâmetros:**
+- `Funcionario *funcionarios`: Array de funcionários.
+- `int *numFuncionarios`: Ponteiro para o número de funcionários cadastrados.
+
+**Exemplo de Uso:**
+```c
+Funcionario funcionarios[100];
+int numFuncionarios = 0;
+cadastrarFuncionario(funcionarios, &numFuncionarios);
